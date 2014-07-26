@@ -130,6 +130,9 @@ class API
 
             return $result;
         }
+        if($result = \file_get_contents($url)) {
+            return $result;
+        }
 
         throw new Exception('Could not find suitable method to retrieve API result. Either install the cURL or pear_http extension, or set allow_url_fopen to 1.');
     }
